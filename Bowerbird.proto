@@ -1,0 +1,49 @@
+package bowerbird;
+
+option java_package = "bowerbird.gpb";
+option java_outer_classname = "BowerbirdMessageProtocolGPB";
+
+message ItemFieldGBP {
+	required string ident 		= 1;
+	required string fieldName 	= 2;
+	optional bool required 		= 3;
+}
+
+message RegexFieldGBP {
+	enum RegexFieldType {
+		UNKNOWN 	= 0;
+		STATIC 		= 1;
+		STANDARD    = 2;
+		MULTIPLE	= 3;
+	}
+	
+	required string ident 			= 1;
+	required RegexFieldType type	= 2;
+	required ItemField field		= 3;
+	optional string staticText		= 4;
+	optional string delim			= 5;
+	repeated string terms			= 6;
+	
+}
+
+message ItemFieldValueGBP {
+	required string fieldId		= 1;
+	required string value		= 2;
+}
+
+message ItemPropertiesGBP {
+
+}
+
+message ParserStateGBP {
+	required string ident 			= 1;
+	optional string parentId		= 2;
+	repeated string childrenIds		= 3;
+	repeated string regexFieldIds	= 4;
+	repeated string terms			= 5;
+}
+
+message ParseResultGBP {
+	
+
+}
