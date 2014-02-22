@@ -19,7 +19,7 @@ message RegexFieldGBP {
 	
 	required string ident 			= 1;
 	required RegexFieldType type	= 2;
-	required ItemField field		= 3;
+	//required ItemField field		= 3;
 	optional string staticText		= 4;
 	optional string delim			= 5;
 	repeated string terms			= 6;
@@ -45,5 +45,15 @@ message ParserStateGBP {
 
 message ParseResultGBP {
 	
+
+}
+
+//Items from various locations
+
+message AmazonItemGPB {
+	optional string asin		= 1;
+}
+
+message PricePointGPB {
 
 }
